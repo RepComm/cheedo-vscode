@@ -1,0 +1,25 @@
+{
+  "name": "cheedo-vscode",
+  "displayName": "cheedo-vscode",
+  "description": "syntax hightlight support for cheedo lang",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "cheedo",
+      "aliases": ["cheedo", "cheedo"],
+      "extensions": ["ch"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "cheedo",
+      "scopeName": "source.cheedo",
+      "path": "./syntaxes/cheedo.tmLanguage.json"
+    }]
+  }
+}

@@ -1,0 +1,65 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "cheedo",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#commentline"
+		},
+		{
+			"include": "#arrowfunction"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#types"
+		}
+	],
+	"repository": {
+		"commentline": {
+			"patterns": [{
+				"name":"comment.line",
+				"begin": "#",
+				"end": "\n"
+			}]
+		},
+		"arrowfunction": {
+			"patterns": [{
+				"name":"keyword.operator",
+				"match": "\\b(=>|atleast|atmost|<|>)\\b"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.cheedo",
+				"match": "\\b(is|as|of|ret|return|enum|end|if)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.cheedo",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cheedo",
+					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"name": "constant.language",
+			"match": "\\b(true|false|none)\\b"
+		},
+		"types": {
+			"name": "entity.name.class",
+			"match": "\\b(str|string|obj|object|num|number|boo|boolean|arr|array)\\b"
+		}
+	},
+	"scopeName": "source.cheedo"
+}
